@@ -1,2 +1,10 @@
 flake8
 black
+
+ipykernel
+nbconvert
+
+pandas
+matplotlib
+
+flask

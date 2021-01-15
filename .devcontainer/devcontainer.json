@@ -18,7 +18,8 @@
 		"ms-azuretools.vscode-docker",
 		"albert.tabout",
 		"ms-python.python",
-		"ms-python.vscode-pylance"
+		"ms-python.vscode-pylance",
+		"davidanson.vscode-markdownlint"
 	],
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
 	// "forwardPorts": [],
