@@ -1,5 +1,15 @@
-<form method="POST">
-  <input name="imdb_input" />
-  <input name="판정" type="submit" />
-</form>
-<div>{{value}}</div>
+<span>
+  <form method="POST">
+    <textarea id=imdb_input name="imdb_input" style="width:400px; height:200px; white-space:normal;">{{ imdb_input }}</textarea>
+    <input name="판정" type="submit" />
+    <script>
+      var textarea = document.getElementById("imdb_input");
+      textarea.addEventListener("paste", function() {
+        if (this.value !== "") {
+            this.value = this.value + "\n";
+        }
+    }, false);
+    </script>
+  </form>
+</span>
+<div>{{ result }}</div>
