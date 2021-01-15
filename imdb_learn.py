@@ -91,6 +91,3 @@ class learning_imdb:
             return "{:.2f}% 확률로 긍정 리뷰입니다.".format(score * 100)
         else:
             return "{:.2f}% 확률로 부정 리뷰입니다.".format((1 - score) * 100)
-
-
-a = "This movie was just way too overrated. The fighting was not professional and in slow motion. I was expecting more from a 200 million budget movie. The little sister of T.Challa was just trying too hard to be funny. The story was really dumb as well. Don't watch this movie if you are going because others say its great unless you are a Black Panther fan or Marvels fan."
