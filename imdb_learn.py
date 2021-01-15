@@ -1,14 +1,12 @@
 # %% [markdown]
-from tensorflow.keras.models import load_model
-from tensorflow.keras.callbacks import EarlyStopping, ModelCheckpoint
-from tensorflow.keras.layers import Dense, GRU, Embedding
-from tensorflow.keras.models import Sequential
-from tensorflow.keras.preprocessing.sequence import pad_sequences
 import re
-import matplotlib.pyplot as plt
-import numpy as np
-from tensorflow.keras import models
+
+
+from tensorflow.keras.callbacks import EarlyStopping, ModelCheckpoint
 from tensorflow.keras.datasets import imdb
+from tensorflow.keras.layers import GRU, Dense, Embedding
+from tensorflow.keras.models import Sequential, load_model
+from tensorflow.keras.preprocessing.sequence import pad_sequences
 
 
 class learning_imdb:
@@ -90,11 +88,9 @@ class learning_imdb:
         pad_new = pad_sequences([encoded], maxlen=self.max_len)  # 패딩
         score = float(self.loaded_model.predict(pad_new))  # 예측
         if score > 0.5:
-            print("{:.2f}% 확률로 긍정 리뷰입니다.".format(score * 100))
+            return "{:.2f}% 확률로 긍정 리뷰입니다.".format(score * 100)
         else:
-            print("{:.2f}% 확률로 부정 리뷰입니다.".format((1 - score) * 100))
+            return "{:.2f}% 확률로 부정 리뷰입니다.".format((1 - score) * 100)
 
 
-# %%
 a = "This movie was just way too overrated. The fighting was not professional and in slow motion. I was expecting more from a 200 million budget movie. The little sister of T.Challa was just trying too hard to be funny. The story was really dumb as well. Don't watch this movie if you are going because others say its great unless you are a Black Panther fan or Marvels fan."
-learning_imdb().sentiment_predict(new_sentence=a)

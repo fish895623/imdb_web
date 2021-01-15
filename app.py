@@ -1,4 +1,5 @@
 from flask import Flask, request, render_template
+from imdb_learn import learning_imdb
 
 app = Flask(__name__)
 
@@ -11,8 +12,9 @@ def index():
 
 @app.route("/", methods=["POST"])
 def my_form_post():
-    s_length_value = request.form["s_length"]
-    return render_template("imdb.html", value=s_length_value)
+    imdb_input = request.form["imdb_input"]
+    imdb_input = learning_imdb().sentiment_predict(imdb_input)
+    return render_template("imdb.html", value=imdb_input)
 
 
 if __name__ == "__main__":
