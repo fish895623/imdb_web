@@ -18,6 +18,10 @@ class learning_imdb:
         """
         file: str
             model filename
+        vocab_size: int
+            vacab size to numbering
+        max_len:
+            max length on imdb review
 
         """
         self.file = file

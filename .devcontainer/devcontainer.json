@@ -19,7 +19,8 @@
 		"albert.tabout",
 		"ms-python.python",
 		"ms-python.vscode-pylance",
-		"davidanson.vscode-markdownlint"
+		"davidanson.vscode-markdownlint",
+		"mhutchie.git-graph"
 	],
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
 	// "forwardPorts": [],
