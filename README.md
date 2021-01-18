@@ -1,3 +1,27 @@
+# 사용법
+```bash
+python3 -m pip install --no-cache-dir requirements.txt
+```
+
+패키지 설치
+
+---
+
+```bash
+python3 -c "import imdb_learn; imdb_learn.learning_imdb().create_model()"
+```
+
+위의 명령어를 이용하여 .h5 모델을 제작
+
+---
+
+```bash
+flask run --port=8080 --host=0.0.0.0
+```
+
+웹서비스 시작
+
+---
 # features
 
 ## 3
