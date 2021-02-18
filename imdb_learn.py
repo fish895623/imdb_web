@@ -28,8 +28,7 @@ class learning_imdb:
 
         self.word_to_index = imdb.get_word_index()
         self.loaded_model = load_model(file)
-        (self.X_train, self.y_train), (self.X_test, self.y_test) = imdb.load_data()
-        pass
+        (self.x_train, self.y_train), (self.x_test, self.y_test) = imdb.load_data()
 
     def create_model(self):
         word_to_index = imdb.get_word_index()
@@ -37,11 +36,11 @@ class learning_imdb:
         for key, value in word_to_index.items():
             index_to_word[value + 3] = key
 
-        (self.X_train, self.y_train), (self.X_test, self.y_test) = imdb.load_data(
+        (self.x_train, self.y_train), (self.x_test, self.y_test) = imdb.load_data(
             num_words=self.vocab_size
         )
-        self.X_train = pad_sequences(sequences=self.X_train, maxlen=self.max_len)
-        self.X_test = pad_sequences(sequences=self.X_test, maxlen=self.max_len)
+        self.x_train = pad_sequences(sequences=self.x_train, maxlen=self.max_len)
+        self.x_test = pad_sequences(sequences=self.x_test, maxlen=self.max_len)
         model = Sequential()
         model.add(Embedding(input_dim=self.vocab_size, output_dim=100))
         model.add(GRU(units=128))
@@ -57,14 +56,13 @@ class learning_imdb:
         )
         model.compile(optimizer="rmsprop", loss="binary_crossentropy", metrics=["acc"])
         model.fit(
-            x=self.X_train,
+            x=self.x_train,
             y=self.y_train,
             epochs=15,
             callbacks=[es, mc],
             batch_size=60,
             validation_split=0.2,
         )
-        pass
 
     def sentiment_predict(self, new_sentence):
         # loaded_model = load_model("GRU_model.h5")
@@ -91,3 +89,5 @@ class learning_imdb:
             return "{:.2f}% 확률로 긍정 리뷰입니다.".format(score * 100)
         else:
             return "{:.2f}% 확률로 부정 리뷰입니다.".format((1 - score) * 100)
+
+# %%
