@@ -38,7 +38,7 @@ Jinja2==3.1.2
 jsonschema==3.2.0
 jupyter-client==6.1.11
 jupyter-core==4.11.1
-jupyterlab-pygments==0.1.2
+jupyterlab-pygments==0.2.2
 Keras-Preprocessing==1.1.2
 keyring==23.9.3
 keyrings.alt==3.0
