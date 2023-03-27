@@ -36,7 +36,7 @@ itsdangerous==2.1.2
 jedi==0.18.0
 Jinja2==3.1.2
 jsonschema==3.2.0
-jupyter-client==6.1.11
+jupyter-client==8.0.3
 jupyter-core==4.11.2
 jupyterlab-pygments==0.2.2
 Keras-Preprocessing==1.1.2
