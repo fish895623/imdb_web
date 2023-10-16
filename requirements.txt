@@ -41,7 +41,7 @@ jupyter-core==4.11.2
 jupyterlab-pygments==0.2.2
 Keras-Preprocessing==1.1.2
 keyring==23.9.3
-keyrings.alt==3.0
+keyrings.alt==5.0.0
 kiwisolver==1.4.4
 Markdown==3.3.3
 MarkupSafe==1.1.1
